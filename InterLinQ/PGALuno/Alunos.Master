@@ -1,0 +1,127 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Alunos.master.cs" Inherits="InterLinQ.PGALuno.Alunos" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+       
+       
+        <link rel="stylesheet" href="../bootstrap/css/demo_table.css">
+        <link rel="stylesheet" href="../bootstrap/css/style.css">
+        <link rel="stylesheet" href="../bootstrap/css/stilo_form.css">
+
+     <script src="../bootstrap/js/jquery.js"></script>
+        <script src="../bootstrap/js/bootbox.js"></script> 
+        <script src="../bootstrap/js/bootbox.min.js"></script> 
+      
+        <script src="../bootstrap/js/bootstrap.js"></script> 
+            <script src="../JS/tela_aluno/alunoscripts.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js"></script> 
+     <script src="../JS/tela_aluno/notas_por_sala.js"></script>
+   
+      
+   
+    
+        
+    
+    
+</head>
+<body  style="width:1400px">
+    <form id="Form_master_aluno" runat="server">
+      
+        <div id="in-sub-nav">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        <ul>
+                            <li><a href="../PGALuno/Alunos.aspx" class="menu " id="link1"><img src='../bootstrap/img/arquivo.png'class="imagem_menu"/><br>Studants</a></li>                                                      
+                            <li><a href="../PGClasse/Classesp.aspx" class="menu" id="link2"><img src='../bootstrap/img/gerenciar.png'class="imagem_menu"/><br>Manager classes</a></li>
+                           <% 
+                               InterLinQ.Usuario u = new InterLinQ.Usuario();
+                               
+                               u = ( InterLinQ.Usuario ) Session["User"];
+                               
+                               if(u.permissao.Contains("Admin")){
+                                %>
+                            
+                             <li><a href="../PGAdmin/admin.aspx" class="menu" id="link3" ><img src='../bootstrap/img/adm.png' class="imagem_menu" /><br>Administrator</a></li>                            
+                             <%} %>
+                            
+                            <li><a href="../Help.aspx" class="menu" id="link4"><img src='../bootstrap/img/help.png' class="imagem_menu" /><br/>Help</a></li> 
+                             <li><a href="../About.aspx" class="menu" id="link5"><img src='../bootstrap/img/about.png'class="imagem_menu"/><br>About</a></li>
+                            <li><a  href="../Logout.aspx" class="menu" onclick="" id="link6"><img src='../bootstrap/img/sair.png'class="imagem_menu"/><br>Exit</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="page"  style="width:1300px">
+                <div class="page-container" style="width:1000px">
+                    <div class="container" style="width:2000px">
+                        <div  style="width:2000px; margin-left:40px">
+                        <div class="span3 sidebar"  style="width:260px">
+                            <h4>Menu Options</h4>
+                            <div class="sidebar ">
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="ManipulaAluno.aspx"  class="accordion-toggle btn" ><span class="pull-right"><img src="../bootstrap/img/novo_aluno.png" class='img_menu_lat'/></span>New student's Registration </a></li>
+                                    <li><a href="#metrics1" data-toggle="collapse" class="accordion-toggle btn"> <span class=" pull-right"><img src="../bootstrap/img/modif.png" class='img_menu_lat'/></span>Change</a></li>
+                                    <li id="metrics1" class="collapse">
+                                        <ul>
+                                            <li><a href="#" onclick="mudaNota()"> <i class="pull-right icon-list"></i> Grades and Absences</a></li>
+                                             <li><a href="#" onclick="PesquisaAluno()"><i class="pull-right icon-book"></i>Student's Registration</a></li> 
+                                        </ul>
+                                    </li>
+                                    <li><a href="ListAluno.aspx" class="accordion-toggle btn"  ><span class="pull-right"><img src="../bootstrap/img/studantlist.png" style=" width: 32px;" class='img_menu_lat'/></span>Studant's List</a></li>
+                                    <li><a href="#"  class="accordion-toggle btn" onclick=" NotasPorSala()" > <span class=" pull-right"><img src="../bootstrap/img/visu.png"  class='img_menu_lat' /></span>View Grades By Classroom</a></li>
+                                    <li><a href="MatriculaAL.aspx"  class="accordion-toggle btn" ><span class="pull-right"><img src="../bootstrap/img/matricula.png" style="height:32px; width:32px" class='img_menu_lat'/></span>registration</a></li>
+                                     <li><a href="#Li1" data-toggle="collapse" class="accordion-toggle btn"> <span class=" pull-right"><img src="../bootstrap/img/print.png" class='img_menu_lat'/></span>Print</a></li>
+                                    <li id="Li1" class="collapse">
+                                        <ul>
+                                            <li><a href="#" onclick="PrintNota()"> <i class="pull-right icon-list"></i>Report Card</a></li>
+                                        </ul>
+                                    </li>
+                                     </ul>
+                            </div>
+                        </div>
+               <div id="showconteudo" class="span9" style="width:890px">
+                           
+                           <asp:ContentPlaceHolder ID="formulario" runat="server">
+        
+                            </asp:ContentPlaceHolder>
+                       
+                        </div>
+                            </div>     
+                        </div>
+                        
+                    </div>
+                </div>
+        <div id="pesquisa"></div>
+       <%-- <div id="MudaNotas" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="MudaNotasLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="MudaNotasLabel">Infor RM </h3>
+  </div>
+  <div class="modal-body">
+    <input type="text" id="p_aluno" name="p_aluno" runat="server" />
+  </div>
+  <div class="modal-footer">
+   <a href="#" class="btn">Close</a>
+    <a href="#" class="btn btn-primary pesquisa">Saerch</a>
+   </div>
+</div>--%>
+            
+    </form>
+</body>
+      
+       
+        
+
+     
+   <script src="../bootstrap/js/jquery.dataTables.js"></script>
+        <script src="../bootstrap/js/jquery.dataTables.min.js"></script>
+     <script src="../JS/tela_aluno/mudanota.js"></script>
+   
+    
+</html>

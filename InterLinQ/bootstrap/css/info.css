@@ -1,0 +1,65 @@
+/* 
+    Document   : info
+    Created on : 26/09/2013, 22:40:49
+    Author     : Marcilio
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#mascara {
+    
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    z-index:900;
+    background-color:transparent;
+    display:none;
+}
+
+#caixa .janela {
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    width:100%;
+    height:100%;
+    display:none;
+    z-index:999;
+    padding:20px;
+    border: 1px solid #111111;
+    background-color: #EEE;
+    
+}
+
+.img_inf{
+       height: 15px;
+       width: 15px;
+       
+   }
+
+#caixa #dialogo {
+    background:white;
+    border: 1px solid #14b8d4;
+    padding: 10px;
+    border-radius:10px; 
+    -moz-border-radius: 10px; 
+    -webkit-border-radius: 10px;
+    
+    width:100%;
+    height:120%;
+    margin:0 auto;
+
+}
+
+.info {
+border-color : white
+
+
+}
+
+#btnSalva {
+    visibility:hidden
+}
+
+

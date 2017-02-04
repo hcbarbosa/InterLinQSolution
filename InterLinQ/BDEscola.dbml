@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BDEscola" Class="BDEscolaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=localhost;Initial Catalog=BDEscola;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="BDEscolaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Bimestre" Member="Bimestres">
+    <Type Name="Bimestre">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Bimestre_r_matr_r_Turma_Disc_Prof" Member="r_matr_r_Turma_Disc_Profs" ThisKey="id" OtherKey="id_bimestre" Type="r_matr_r_Turma_Disc_Prof" />
+      <Association Name="status_Bimestre" Member="status1" ThisKey="status" OtherKey="id" Type="status" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cidade" Member="Cidades">
+    <Type Name="Cidade">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="id_estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="capital" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Cidade_Pessoa" Member="Pessoas" ThisKey="id" OtherKey="localidade" Type="Pessoa" />
+      <Association Name="Cidade_historico" Member="historicos" ThisKey="id" OtherKey="id_cidade" Type="historico" />
+      <Association Name="Estado_Cidade" Member="Estado" ThisKey="id_estado" OtherKey="id" Type="Estado" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Disciplina" Member="Disciplinas">
+    <Type Name="Disciplina">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="informacoes" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Disciplina_r_Turma_Disc_Prof" Member="r_Turma_Disc_Profs" ThisKey="id" OtherKey="id_disciplina" Type="r_Turma_Disc_Prof" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Estado" Member="Estados">
+    <Type Name="Estado">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_pais" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sigla" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Estado_Cidade" Member="Cidades" ThisKey="id" OtherKey="id_estado" Type="Cidade" />
+      <Association Name="Pai_Estado" Member="Pai" ThisKey="id_pais" OtherKey="id" Type="Pai" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pais" Member="Pais">
+    <Type Name="Pai">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Pai_Estado" Member="Estados" ThisKey="id" OtherKey="id_pais" Type="Estado" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pessoa" Member="Pessoas">
+    <Type Name="Pessoa">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="data_nasc" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="sexo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="cpf" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="rg" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="rua" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="bairro" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="complemento" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="localidade" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Pessoa_Professor" Member="Professor" ThisKey="id" OtherKey="id" Type="Professor" Cardinality="One" />
+      <Association Name="Pessoa_Telefone" Member="Telefone" ThisKey="id" OtherKey="id" Type="Telefone" Cardinality="One" />
+      <Association Name="Pessoa_Usuario" Member="Usuario" ThisKey="id" OtherKey="id" Type="Usuario" Cardinality="One" />
+      <Association Name="Pessoa_Aluno" Member="Aluno" ThisKey="id" OtherKey="id" Type="Aluno" Cardinality="One" />
+      <Association Name="Cidade_Pessoa" Member="Cidade" ThisKey="localidade" OtherKey="id" Type="Cidade" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Professor" Member="Professors">
+    <Type Name="Professor">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="registr" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Professor_r_Turma_Disc_Prof" Member="r_Turma_Disc_Profs" ThisKey="id" OtherKey="id_prof" Type="r_Turma_Disc_Prof" />
+      <Association Name="Pessoa_Professor" Member="Pessoa" ThisKey="id" OtherKey="id" Type="Pessoa" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.status" Member="status">
+    <Type Name="status">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="descricao" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="status_Bimestre" Member="Bimestres" ThisKey="id" OtherKey="status" Type="Bimestre" />
+      <Association Name="status_Aluno" Member="Alunos" ThisKey="id" OtherKey="status" Type="Aluno" />
+      <Association Name="status_AnoLetivo" Member="AnoLetivos" ThisKey="id" OtherKey="status" Type="AnoLetivo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Telefone" Member="Telefones">
+    <Type Name="Telefone">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tel_pessoal" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="tel_residencia" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="Pessoa_Telefone" Member="Pessoa" ThisKey="id" OtherKey="id" Type="Pessoa" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Usuario" Member="Usuarios">
+    <Type Name="Usuario">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="senha" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="permissao" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="Pessoa_Usuario" Member="Pessoa" ThisKey="id" OtherKey="id" Type="Pessoa" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.r_Turma_Disc_Prof" Member="r_Turma_Disc_Profs">
+    <Type Name="r_Turma_Disc_Prof">
+      <Column Name="id_turma" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_disciplina" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_prof" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="data" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desativado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="r_Turma_Disc_Prof_r_matr_r_Turma_Disc_Prof" Member="r_matr_r_Turma_Disc_Profs" ThisKey="id_turma,id_disciplina,id_prof" OtherKey="id_turma,id_disci,id_prof" Type="r_matr_r_Turma_Disc_Prof" />
+      <Association Name="Disciplina_r_Turma_Disc_Prof" Member="Disciplina" ThisKey="id_disciplina" OtherKey="id" Type="Disciplina" IsForeignKey="true" />
+      <Association Name="Professor_r_Turma_Disc_Prof" Member="Professor" ThisKey="id_prof" OtherKey="id" Type="Professor" IsForeignKey="true" />
+      <Association Name="Turma_r_Turma_Disc_Prof" Member="Turma" ThisKey="id_turma" OtherKey="id" Type="Turma" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Turma" Member="Turmas">
+    <Type Name="Turma">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="periodo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="desativado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Turma_r_Turma_Disc_Prof" Member="r_Turma_Disc_Profs" ThisKey="id" OtherKey="id_turma" Type="r_Turma_Disc_Prof" />
+      <Association Name="Turma_Matricula" Member="Matriculas" ThisKey="id" OtherKey="id_turma" Type="Matricula" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Matricula" Member="Matriculas">
+    <Type Name="Matricula">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_aluno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_turma" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="data" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="desativado" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Matricula_r_matr_r_Turma_Disc_Prof" Member="r_matr_r_Turma_Disc_Profs" ThisKey="id,data,desativado" OtherKey="id_matricula,data,desativado" Type="r_matr_r_Turma_Disc_Prof" />
+      <Association Name="Turma_Matricula" Member="Turma" ThisKey="id_turma" OtherKey="id" Type="Turma" IsForeignKey="true" />
+      <Association Name="Aluno_Matricula" Member="Aluno" ThisKey="id_aluno" OtherKey="id" Type="Aluno" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.r_matr_r_Turma_Disc_Prof" Member="r_matr_r_Turma_Disc_Profs">
+    <Type Name="r_matr_r_Turma_Disc_Prof">
+      <Column Name="id_matricula" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_prof" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_turma" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_disci" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nota" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="faltas" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_bimestre" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="data" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="desativado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Bimestre_r_matr_r_Turma_Disc_Prof" Member="Bimestre" ThisKey="id_bimestre" OtherKey="id" Type="Bimestre" IsForeignKey="true" />
+      <Association Name="r_Turma_Disc_Prof_r_matr_r_Turma_Disc_Prof" Member="r_Turma_Disc_Prof" ThisKey="id_turma,id_disci,id_prof" OtherKey="id_turma,id_disciplina,id_prof" Type="r_Turma_Disc_Prof" IsForeignKey="true" />
+      <Association Name="Matricula_r_matr_r_Turma_Disc_Prof" Member="Matricula" ThisKey="id_matricula,data,desativado" OtherKey="id,data,desativado" Type="Matricula" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Aluno" Member="Alunos">
+    <Type Name="Aluno">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="rm" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ra" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="rne" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="nome_pai" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="nome_mae" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="foto" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="inf" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Aluno_Matricula" Member="Matriculas" ThisKey="id" OtherKey="id_aluno" Type="Matricula" />
+      <Association Name="Aluno_historico" Member="historicos" ThisKey="id" OtherKey="id_aluno" Type="historico" />
+      <Association Name="Aluno_Anotacoe" Member="Anotacoe" ThisKey="id" OtherKey="id" Type="Anotacoe" Cardinality="One" />
+      <Association Name="Pessoa_Aluno" Member="Pessoa" ThisKey="id" OtherKey="id" Type="Pessoa" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="status_Aluno" Member="status1" ThisKey="status" OtherKey="id" Type="status" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.historico" Member="historicos">
+    <Type Name="historico">
+      <Column Name="id_serie" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nome_escola" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ano" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_cidade" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_aluno" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Aluno_historico" Member="Aluno" ThisKey="id_aluno" OtherKey="id" Type="Aluno" IsForeignKey="true" />
+      <Association Name="Cidade_historico" Member="Cidade" ThisKey="id_cidade" OtherKey="id" Type="Cidade" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Anotacoes" Member="Anotacoes">
+    <Type Name="Anotacoe">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Anotacao" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Aluno_Anotacoe" Member="Aluno" ThisKey="id" OtherKey="id" Type="Aluno" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AnoLetivo" Member="AnoLetivos">
+    <Type Name="AnoLetivo">
+      <Column Name="ano" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="status_AnoLetivo" Member="status1" ThisKey="status" OtherKey="id" Type="status" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

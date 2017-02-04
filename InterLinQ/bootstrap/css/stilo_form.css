@@ -1,0 +1,172 @@
+/* 
+    Document   : stilo_form
+    Created on : 07/09/2013, 10:27:01
+    Author     : marcilio
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+#btn_form{
+    width: 900px;
+    margin-bottom: 5px;
+    
+}
+.btn_formulario{
+    
+    
+    margin-right:  8px;
+    
+}
+.imagem_close{
+    float: right
+     
+}
+.matricular{
+    visibility: hidden;
+}
+
+.btnsalva{
+    visibility: visible
+}
+
+
+    #dados{
+    width: 880px;
+    
+}
+#formulario{
+    width: 880px;
+    height:1200px;
+    
+    
+}
+#box_form_1{
+    width: 515px;
+    height: 310px;
+ 
+}
+#box_form_2{
+    
+   
+    width: 515px;
+    height: 230px;
+   
+    
+}
+#box_form_3{
+     height: 550px;
+    width: 330px;
+    float: right;
+    margin-right:60px;
+    margin-top: -545px;
+   
+    
+    
+    
+}
+#box_form_4{
+    width: 870px;
+    height: 510px;
+   
+}
+.c_max{
+    width: 87%;
+    float: right;
+}
+#sub1{
+    width: 515px;
+    height: 30px;
+
+
+}
+#sub2{
+    width: 515px;
+    height: 30px;
+
+
+}
+#sub3{
+    width: 515px; 
+    height: 160px;
+
+}
+#sub4{
+    width: 515px; 
+    height: 100px;
+
+}
+
+.nomes{
+    width: 83%;
+    float: right;
+}
+
+sub4_nomes1{
+    width: 100%; 
+    height: 40px;
+
+}
+sub4_nomes2{
+    width: 100%;
+    height: 40px;
+
+}
+.r_campos{
+    width: 180px;
+}
+#box3_sub1{
+
+    width: 100%;
+    height: 30px;
+
+}
+#box3_sub2{
+    width: 100%;
+    height: 40px;
+    float: right;
+
+}
+.nomes2{
+    width: 85.5%
+}
+#box3_sub3{
+    width: 100%;
+    height: 30px;
+    float: right;    
+}
+
+#box_imagem{
+    
+    width: 160px;
+    height: 170px;
+    border: 1px solid #008dcd;
+    margin-bottom:10px;
+    margin-left: 80px;
+    margin-top: 10px;
+}
+#bn_imagem{
+    margin-left: 90px;
+}
+
+
+#box_inf{
+    width: 340px;
+    height: 285px;
+
+    margin-top: 15px;
+    display: inline-block;
+}
+#txt_inf{
+    width:300px;
+    height: 95%;
+}
+
+td{
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+
+
+

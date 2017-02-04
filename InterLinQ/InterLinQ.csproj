@@ -1,0 +1,669 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{47F23C04-99B6-4B7A-9CCC-47A3960A7184}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InterLinQ</RootNamespace>
+    <AssemblyName>InterLinQ</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="ADAluno-em-Inf.aspx" />
+    <Content Include="AddAno.aspx" />
+    <Content Include="AutoSugestNome.aspx" />
+    <Content Include="bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="bootstrap\css\bootstrap.css" />
+    <Content Include="bootstrap\css\bootstrap.min.css" />
+    <Content Include="bootstrap\css\css_info\table.css" />
+    <Content Include="bootstrap\css\css_mudanota\demo_table.css" />
+    <Content Include="bootstrap\css\css_mudanota\mudanota.css" />
+    <Content Include="bootstrap\css\css_mudanota\navcss_min.css" />
+    <Content Include="bootstrap\css\css_mudanota\nav_css.css" />
+    <Content Include="bootstrap\css\demo_page.css" />
+    <Content Include="bootstrap\css\demo_table.css" />
+    <Content Include="bootstrap\css\demo_table_jui.css" />
+    <Content Include="bootstrap\css\formo_ad_prof.css" />
+    <Content Include="bootstrap\css\info.css" />
+    <Content Include="bootstrap\css\jquery.dataTables.css" />
+    <Content Include="bootstrap\css\jquery.dataTables_themeroller.css" />
+    <Content Include="bootstrap\css\login.css" />
+    <Content Include="bootstrap\css\magicsuggest-1.3.1.css" />
+    <Content Include="bootstrap\css\stilo_form.css" />
+    <Content Include="bootstrap\css\style.css" />
+    <Content Include="bootstrap\img\studantlist.png" />
+    <Content Include="bootstrap\img\ajax-loader.gif" />
+    <Content Include="bootstrap\img\escola.png" />
+    <Content Include="bootstrap\img\matricula.png" />
+    <Content Include="bootstrap\img\8bcLQqF.png" />
+    <Content Include="bootstrap\img\about.png" />
+    <Content Include="bootstrap\img\add_inf.png" />
+    <Content Include="bootstrap\img\adm.png" />
+    <Content Include="bootstrap\img\arquivo.png" />
+    <Content Include="bootstrap\img\back_disabled.png" />
+    <Content Include="bootstrap\img\back_enabled.png" />
+    <Content Include="bootstrap\img\back_enabled_hover.png" />
+    <Content Include="bootstrap\img\cadastrar.png" />
+    <Content Include="bootstrap\img\calendar.png" />
+    <Content Include="bootstrap\img\close.png" />
+    <Content Include="bootstrap\img\conf.png" />
+    <Content Include="bootstrap\img\deletar_inf.png" />
+    <Content Include="bootstrap\img\delete.png" />
+    <Content Include="bootstrap\img\details_close.png" />
+    <Content Include="bootstrap\img\details_open.png" />
+    <Content Include="bootstrap\img\editar.png" />
+    <Content Include="bootstrap\img\editas_inf.png" />
+    <Content Include="bootstrap\img\favicon.ico" />
+    <Content Include="bootstrap\img\find.png" />
+    <Content Include="bootstrap\img\finder.png" />
+    <Content Include="bootstrap\img\forward_disabled.png" />
+    <Content Include="bootstrap\img\forward_enabled.png" />
+    <Content Include="bootstrap\img\forward_enabled_hover.png" />
+    <Content Include="bootstrap\img\gerenciar.png" />
+    <Content Include="bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="bootstrap\img\help.png" />
+    <Content Include="bootstrap\img\home.png" />
+    <Content Include="bootstrap\img\inf.png" />
+    <Content Include="bootstrap\img\lista.png" />
+    <Content Include="bootstrap\img\login-box-backg.png" />
+    <Content Include="bootstrap\img\login-btn.png" />
+    <Content Include="bootstrap\img\modif.png" />
+    <Content Include="bootstrap\img\modif_res.png" />
+    <Content Include="bootstrap\img\new_user.png" />
+    <Content Include="bootstrap\img\nova_classe.png" />
+    <Content Include="bootstrap\img\novo_aluno.png" />
+    <Content Include="bootstrap\img\placeholder1.png" />
+    <Content Include="bootstrap\img\print.png" />
+    <Content Include="bootstrap\img\sair.png" />
+    <Content Include="bootstrap\img\salvar.png" />
+    <Content Include="bootstrap\img\save.png" />
+    <Content Include="bootstrap\img\sort_asc.png" />
+    <Content Include="bootstrap\img\sort_asc_disabled.png" />
+    <Content Include="bootstrap\img\sort_both.png" />
+    <Content Include="bootstrap\img\sort_desc.png" />
+    <Content Include="bootstrap\img\sort_desc_disabled.png" />
+    <Content Include="bootstrap\img\visu.png" />
+    <Content Include="bootstrap\js\bootbox.js" />
+    <Content Include="bootstrap\js\bootbox.min.js" />
+    <Content Include="bootstrap\js\bootstrap.js" />
+    <Content Include="bootstrap\js\bootstrap.min.js" />
+    <Content Include="bootstrap\js\d3-setup.js" />
+    <Content Include="bootstrap\js\jquery-ui.js" />
+    <Content Include="bootstrap\js\jquery.dataTables.js" />
+    <Content Include="bootstrap\js\jquery.dataTables.min.js" />
+    <Content Include="bootstrap\js\jquery.js" />
+    <Content Include="bootstrap\js\magicsuggest-1.3.1.js" />
+    <Content Include="bootstrap\js\typeahead.js" />
+    <Content Include="bootstrap\js\typeahead.min.js" />
+    <Content Include="GetAluno.aspx" />
+    <Content Include="GetAno.aspx" />
+    <Content Include="GetCidade.aspx" />
+    <Content Include="GetMateria.aspx" />
+    <Content Include="GetMateria_Ed.aspx" />
+    <Content Include="GetProfessor.aspx" />
+    <Content Include="GetTurma.aspx" />
+    <Content Include="GetTurma_p_ID.aspx" />
+    <Content Include="Help.aspx" />
+    <Content Include="Historico_cidade.aspx" />
+    <Content Include="Historico_Estado.aspx" />
+    <Content Include="JSPrint\csss\960.css" />
+    <Content Include="JSPrint\csss\images\icon-print-preview.png" />
+    <Content Include="JSPrint\csss\print.css" />
+    <Content Include="JSPrint\csss\screen.css" />
+    <Content Include="JSPrint\css\images\icon-close.png" />
+    <Content Include="JSPrint\css\images\icon-print.png" />
+    <Content Include="JSPrint\css\print-preview.css" />
+    <Content Include="JSPrint\Jquery.js" />
+    <Content Include="JSPrint\jquery.print-preview.js" />
+    <Content Include="JS\Mascara.js" />
+    <Content Include="JS\MascMoney.js" />
+    <Content Include="JS\tela_about\scriptabaout.js" />
+    <Content Include="JS\tela_adm\anoletivo.js" />
+    <Content Include="EditaAnoLetivo.aspx" />
+    <Content Include="JS\tela_adm\scriptadmin.js" />
+    <Content Include="JS\tela_aluno\alunoscripts.js" />
+    <Content Include="JS\tela_aluno\Autosugest.js" />
+    <Content Include="JS\tela_aluno\historigoAjax.js" />
+    <Content Include="JS\tela_aluno\Matricola.js" />
+    <Content Include="JS\tela_aluno\mudanota.js" />
+    <Content Include="JS\tela_aluno\notas_por_sala.js" />
+    <Content Include="JS\tela_aluno\validaCampos.js" />
+    <Content Include="JS\tela_aluno\vrdados.js" />
+    <Content Include="JS\tela_classe\classescripts.js" />
+    <Content Include="JS\tela_classe\Cria_Sala.js" />
+    <Content Include="JS\tela_classe\EditaTurma.js" />
+    <Content Include="JS\tela_classe\mostra_info.js" />
+    <Content Include="JS\tela_help\scripthelp.js" />
+    <Content Include="Login.aspx" />
+    <Content Include="Logout.aspx" />
+    <Content Include="MudaPer.aspx" />
+    <Content Include="MudaStatus.aspx" />
+    <Content Include="Notations.aspx" />
+    <Content Include="PGAdmin\admin.aspx" />
+    <Content Include="PGAdmin\Ano.aspx" />
+    <Content Include="PGAdmin\CriaUser.aspx" />
+    <Content Include="PGAdmin\DeletUser.aspx" />
+    <Content Include="PGAdmin\ListStudent.aspx" />
+    <Content Include="PGAdmin\ListUser.aspx" />
+    <Content Include="PGAdmin\MudaSenha.aspx" />
+    <Content Include="PGALuno\AlualizaAlunos.aspx" />
+    <Content Include="PGALuno\Alunos.aspx" />
+    <Content Include="PGALuno\ListAluno.aspx" />
+    <Content Include="PGALuno\ManipulaAluno.aspx" />
+    <Content Include="PGALuno\MatriculaAL.aspx" />
+    <Content Include="PGALuno\Notas_Faltas.aspx" />
+    <Content Include="PGALuno\Notas_Por_Sala.aspx" />
+    <Content Include="PGALuno\Print.aspx" />
+    <Content Include="PGClasse\Ad_Prof.aspx" />
+    <Content Include="PGClasse\Classesp.aspx" />
+    <Content Include="PGClasse\Cria_Materia.aspx" />
+    <Content Include="PGClasse\Cria_Sala.aspx" />
+    <Content Include="PGClasse\Edita_Turma.aspx" />
+    <Content Include="PGClasse\Edit_Materia.aspx" />
+    <Content Include="PGClasse\Edit_Prof.aspx" />
+    <Content Include="PGClasse\Informacoes.aspx" />
+    <Content Include="PGClasse\Lista_Turmas.aspx" />
+    <Content Include="PGClasse\List_Materia.aspx" />
+    <Content Include="PGClasse\List_Profes.aspx" />
+    <Content Include="PGClasse\Matricula_p_Inf.aspx" />
+    <Content Include="PGClasse\RemoveTurma.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADAluno-em-Inf.aspx.cs">
+      <DependentUpon>ADAluno-em-Inf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADAluno-em-Inf.aspx.designer.cs">
+      <DependentUpon>ADAluno-em-Inf.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddAno.aspx.cs">
+      <DependentUpon>AddAno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddAno.aspx.designer.cs">
+      <DependentUpon>AddAno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aluno.cs" />
+    <Compile Include="AutoSugestNome.aspx.cs">
+      <DependentUpon>AutoSugestNome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoSugestNome.aspx.designer.cs">
+      <DependentUpon>AutoSugestNome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BDEscola.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDEscola.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="EditaAnoLetivo.aspx.cs">
+      <DependentUpon>EditaAnoLetivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditaAnoLetivo.aspx.designer.cs">
+      <DependentUpon>EditaAnoLetivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RootObject2.cs" />
+    <Compile Include="GetAluno.aspx.cs">
+      <DependentUpon>GetAluno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetAluno.aspx.designer.cs">
+      <DependentUpon>GetAluno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetAno.aspx.cs">
+      <DependentUpon>GetAno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetAno.aspx.designer.cs">
+      <DependentUpon>GetAno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetCidade.aspx.cs">
+      <DependentUpon>GetCidade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetCidade.aspx.designer.cs">
+      <DependentUpon>GetCidade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetMateria.aspx.cs">
+      <DependentUpon>GetMateria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetMateria.aspx.designer.cs">
+      <DependentUpon>GetMateria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetMateria_Ed.aspx.cs">
+      <DependentUpon>GetMateria_Ed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetMateria_Ed.aspx.designer.cs">
+      <DependentUpon>GetMateria_Ed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetProfessor.aspx.cs">
+      <DependentUpon>GetProfessor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetProfessor.aspx.designer.cs">
+      <DependentUpon>GetProfessor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetTurma.aspx.cs">
+      <DependentUpon>GetTurma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetTurma.aspx.designer.cs">
+      <DependentUpon>GetTurma.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetTurma_p_ID.aspx.cs">
+      <DependentUpon>GetTurma_p_ID.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetTurma_p_ID.aspx.designer.cs">
+      <DependentUpon>GetTurma_p_ID.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Help.aspx.cs">
+      <DependentUpon>Help.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Help.aspx.designer.cs">
+      <DependentUpon>Help.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Historico_cidade.aspx.cs">
+      <DependentUpon>Historico_cidade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Historico_cidade.aspx.designer.cs">
+      <DependentUpon>Historico_cidade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Historico_Estado.aspx.cs">
+      <DependentUpon>Historico_Estado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Historico_Estado.aspx.designer.cs">
+      <DependentUpon>Historico_Estado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MudaPer.aspx.cs">
+      <DependentUpon>MudaPer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MudaPer.aspx.designer.cs">
+      <DependentUpon>MudaPer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MudaStatus.aspx.cs">
+      <DependentUpon>MudaStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MudaStatus.aspx.designer.cs">
+      <DependentUpon>MudaStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Notations.aspx.cs">
+      <DependentUpon>Notations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Notations.aspx.designer.cs">
+      <DependentUpon>Notations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PGAdmin\admin.aspx.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGAdmin\admin.aspx.designer.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PGAdmin\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGAdmin\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PGAdmin\Ano.aspx.cs">
+      <DependentUpon>Ano.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGAdmin\Ano.aspx.designer.cs">
+      <DependentUpon>Ano.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PGAdmin\CriaUser.aspx.cs">
+      <DependentUpon>CriaUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGAdmin\CriaUser.aspx.designer.cs">
+      <DependentUpon>CriaUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PGAdmin\DeletUser.aspx.cs">
+      <DependentUpon>DeletUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGAdmin\DeletUser.aspx.designer.cs">
+      <DependentUpon>DeletUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PGAdmin\ListStudent.aspx.cs">
+      <DependentUpon>ListStudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGAdmin\ListStudent.aspx.designer.cs">
+      <DependentUpon>ListStudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PGAdmin\ListUser.aspx.cs">
+      <DependentUpon>ListUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGAdmin\ListUser.aspx.designer.cs">
+      <DependentUpon>ListUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PGAdmin\MudaSenha.aspx.cs">
+      <DependentUpon>MudaSenha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGAdmin\MudaSenha.aspx.designer.cs">
+      <DependentUpon>MudaSenha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PGALuno\AlualizaAlunos.aspx.cs">
+      <DependentUpon>AlualizaAlunos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGALuno\AlualizaAlunos.aspx.designer.cs">
+      <DependentUpon>AlualizaAlunos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PGALuno\Alunos.aspx.cs">
+      <DependentUpon>Alunos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGALuno\Alunos.aspx.designer.cs">
+      <DependentUpon>Alunos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PGALuno\Alunos.Master.cs">
+      <DependentUpon>Alunos.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGALuno\Alunos.Master.designer.cs">
+      <DependentUpon>Alunos.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PGALuno\ListAluno.aspx.cs">
+      <DependentUpon>ListAluno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGALuno\ListAluno.aspx.designer.cs">
+      <DependentUpon>ListAluno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PGALuno\ManipulaAluno.aspx.cs">
+      <DependentUpon>ManipulaAluno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGALuno\ManipulaAluno.aspx.designer.cs">
+      <DependentUpon>ManipulaAluno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PGALuno\MatriculaAL.aspx.cs">
+      <DependentUpon>MatriculaAL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGALuno\MatriculaAL.aspx.designer.cs">
+      <DependentUpon>MatriculaAL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PGALuno\Notas_Faltas.aspx.cs">
+      <DependentUpon>Notas_Faltas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGALuno\Notas_Faltas.aspx.designer.cs">
+      <DependentUpon>Notas_Faltas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PGALuno\Notas_Por_Sala.aspx.cs">
+      <DependentUpon>Notas_Por_Sala.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGALuno\Notas_Por_Sala.aspx.designer.cs">
+      <DependentUpon>Notas_Por_Sala.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PGALuno\Print.aspx.cs">
+      <DependentUpon>Print.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGALuno\Print.aspx.designer.cs">
+      <DependentUpon>Print.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PGClasse\Ad_Prof.aspx.cs">
+      <DependentUpon>Ad_Prof.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGClasse\Ad_Prof.aspx.designer.cs">
+      <DependentUpon>Ad_Prof.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PGClasse\Classes.Master.cs">
+      <DependentUpon>Classes.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGClasse\Classes.Master.designer.cs">
+      <DependentUpon>Classes.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PGClasse\Classesp.aspx.cs">
+      <DependentUpon>Classesp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGClasse\Classesp.aspx.designer.cs">
+      <DependentUpon>Classesp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PGClasse\Cria_Materia.aspx.cs">
+      <DependentUpon>Cria_Materia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGClasse\Cria_Materia.aspx.designer.cs">
+      <DependentUpon>Cria_Materia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PGClasse\Cria_Sala.aspx.cs">
+      <DependentUpon>Cria_Sala.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGClasse\Cria_Sala.aspx.designer.cs">
+      <DependentUpon>Cria_Sala.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PGClasse\Edita_Turma.aspx.cs">
+      <DependentUpon>Edita_Turma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGClasse\Edita_Turma.aspx.designer.cs">
+      <DependentUpon>Edita_Turma.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PGClasse\Edit_Materia.aspx.cs">
+      <DependentUpon>Edit_Materia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGClasse\Edit_Materia.aspx.designer.cs">
+      <DependentUpon>Edit_Materia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PGClasse\Edit_Prof.aspx.cs">
+      <DependentUpon>Edit_Prof.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGClasse\Edit_Prof.aspx.designer.cs">
+      <DependentUpon>Edit_Prof.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PGClasse\Informacoes.aspx.cs">
+      <DependentUpon>Informacoes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGClasse\Informacoes.aspx.designer.cs">
+      <DependentUpon>Informacoes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PGClasse\Lista_Turmas.aspx.cs">
+      <DependentUpon>Lista_Turmas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGClasse\Lista_Turmas.aspx.designer.cs">
+      <DependentUpon>Lista_Turmas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PGClasse\List_Materia.aspx.cs">
+      <DependentUpon>List_Materia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGClasse\List_Materia.aspx.designer.cs">
+      <DependentUpon>List_Materia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PGClasse\List_Profes.aspx.cs">
+      <DependentUpon>List_Profes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGClasse\List_Profes.aspx.designer.cs">
+      <DependentUpon>List_Profes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PGClasse\Matricula_p_Inf.aspx.cs">
+      <DependentUpon>Matricula_p_Inf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGClasse\Matricula_p_Inf.aspx.designer.cs">
+      <DependentUpon>Matricula_p_Inf.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PGClasse\RemoveTurma.aspx.cs">
+      <DependentUpon>RemoveTurma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGClasse\RemoveTurma.aspx.designer.cs">
+      <DependentUpon>RemoveTurma.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RootObject.cs" />
+    <Compile Include="sugestNome.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bootstrap\img\Sorting icons.psd" />
+    <Content Include="bootstrap\js\jquery-2.0.3.min.map" />
+    <Content Include="PGALuno\Alunos.Master" />
+    <Content Include="PGClasse\Classes.Master" />
+    <Content Include="BDEscola.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>BDEscola.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="PGAdmin\Admin.Master" />
+    <Content Include="documentos\Documentacao.pdf" />
+    <Content Include="documentos\Projeto.pdf" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LinqBackEnd\LinqBackEnd.csproj">
+      <Project>{9025faa9-abed-4711-b045-c20aa48c6a13}</Project>
+      <Name>LinqBackEnd</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BDEscola.dbml.layout">
+      <DependentUpon>BDEscola.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:9831/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
